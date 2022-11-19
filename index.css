@@ -3,6 +3,10 @@
     font-weight: 600;
 }
 
+a{
+    color: #fff;
+}
+
 body {
     background-color: #eee;
     margin: 0;
@@ -20,10 +24,12 @@ nav {
     font-weight: 300;
     background-color: rgb(0, 92, 61);
     position: fixed;
+    top: 0;
+    box-sizing: border-box;
 }
 
 #containerResponsive {
-    margin: 0px 150px;
+    margin: 100px 150px;
     height: 100vh;
     display: flex;
     justify-content: center;
@@ -39,14 +45,14 @@ nav {
 
 @media only screen and (max-width: 1000px) {
     #containerResponsive {
-        margin: 50px 50px;
+        margin: 100px 50px;
         height: auto;
     }
 }
 
 @media only screen and (max-width: 750px) {
     #containerResponsive {
-        margin: 50px 50px;
+        margin: 100px 50px;
         height: auto;
     }
 
@@ -65,7 +71,7 @@ nav {
 
 @media only screen and (max-width: 550px) {
     #containerResponsive {
-        margin: 50px 10px;
+        margin: 100px 10px;
         height: auto;
     }
 
@@ -77,8 +83,12 @@ nav {
     }
 
     nav {
-        font-size: 14px;
+        font-size: 12px;
         font-weight: 300;
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: left !important;
+        align-items: center !important;
     }
 }
 
@@ -113,12 +123,14 @@ nav {
     font-size: 18px;
     font-weight: 600;
     height: 20px;
+    margin: 0;
 }
 
 .avoPrice {
     font-size: 14px;
     font-weight: 500;
     height: 20px;
+    margin: 0;
 }
 
 .hidden {
@@ -138,22 +150,24 @@ nav {
     align-items: center;
 }
 
-.extraData>div {
-    width: 40%;
+.dataMainContainer {
+    width: 50%;
     height: 70vh;
     border-radius: 10px;
     background-color: #fff;
     padding: 15px;
 
     display: flex;
-    justify-content: start;
-    align-items: flex-start;
+    justify-content: center;
+    align-items: center;
     flex-direction: column;
+
+    box-sizing: border-box;
 }
 
 @media only screen and (max-width: 800px) {
     .extraData>div {
-        width: 80%;
+        width: 90%;
         height: 80vh;
     }
 }
@@ -161,8 +175,10 @@ nav {
 
 .btnClose {
     width: 100%;
+    box-sizing: border-box;
     height: auto;
     font-size: 20px;
+    margin-top: 10px;
     font-weight: 500;
     border-radius: 10px;
     padding: 10px 20px;
@@ -180,26 +196,49 @@ nav {
 
 .dataMain {
     width: 100%;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    overflow-y: auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    gap: 5px;
     box-sizing: border-box;
 }
 
-.dataMain>div {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: auto;
-    gap: 5px;
+.dataMain div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
 }
 
 .dataMain>div>p {
     font-weight: 500;
     font-size: 14px;
+    width: 100%;
     background-color: #eee;
     width: 100%;
     padding: 10px 20px;
-    margin: 5px 0;
+    margin: 5px 5px;
     border-radius: 5px;
+}
+
+@media only screen and (max-width: 550px) {
+
+    .dataMain {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        gap: 5px;
+        box-sizing: border-box;
+        overflow-y: scroll;
+        padding: 5px;
+    }
+
+    .dataMain div {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-sizing: border-box;
+        flex-direction: column;
+    }
 }
